@@ -1,0 +1,43 @@
+/* The Address Bar (TextField) */
+.text-field {
+    -fx-background-color: #f0f0f5;
+    -fx-background-radius: 20px; /* Gives it pill-shaped rounded corners */
+    -fx-border-radius: 20px;
+    -fx-border-color: "Black";
+    -fx-padding: 8px 16px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+/* When the user clicks inside the address bar */
+.text-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-background-color: #ffffff;
+}
+
+/* The 'Go' Button */
+.button {
+    -fx-background-color: #4a90e2; /* Modern blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px; /* Matches the search bar */
+    -fx-padding: 8px 24px;
+    -fx-cursor: hand;
+}
+
+/* Button hover effect */
+.button:hover {
+    -fx-background-color: #357abd;
+}
+
+/* Button click effect */
+.button:pressed {
+    -fx-background-color: #285a8f;
+}
+
+/* The WebView */
+.web-view {
+    /* WebView doesn't need much styling, but a subtle top border separates it from the address bar */
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px 0 0 0;
+}
