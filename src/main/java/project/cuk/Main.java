@@ -43,6 +43,9 @@ public class Main extends Application{
     public void initialize() {
 
         webEngine = webView.getEngine();
+        webEngine.locationProperty().addListener((observable, oldUrl, newUrl) -> {
+            addressBar.setText(newUrl);
+        });
         webEngine.load("https://www.google.com");
         webHistory= webEngine.getHistory();
     }
