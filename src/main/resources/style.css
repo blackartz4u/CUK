@@ -21,7 +21,7 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 20px; /* Matches the search bar */
-    -fx-padding: 8px 24px;
+    -fx-padding: 8px, 0px;
     -fx-cursor: hand;
 }
 

@@ -49,6 +49,10 @@ public class Main extends Application{
         }
         webEngine.load(url + "/index.html");
     }
+    @FXML
+    private void refreshWebpage(){
+        webEngine.reload();
+    }
     static void main(String[] args) {
         launch();
     }
