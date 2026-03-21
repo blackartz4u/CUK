@@ -13,9 +13,10 @@
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.20001220703125" minWidth="10.0" prefWidth="71.59999999999997" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.7999877929688" minWidth="10.0" prefWidth="95.40003662109376" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.7999877929688" minWidth="10.0" prefWidth="140.1999633789062" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.20001220703125" minWidth="10.0" prefWidth="71.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.7999877929688" minWidth="10.0" prefWidth="71.80000000000001" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.7999877929688" minWidth="10.0" prefWidth="86.99998779296874" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.7999877929688" minWidth="10.0" prefWidth="91.00001220703132" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -30,5 +31,7 @@
       <TextField fx:id="addressBar" onAction="#loadWebpage" prefHeight="27.0" prefWidth="530.0" promptText="Enter a URL" GridPane.columnSpan="3" />
       <Button fx:id="button" mnemonicParsing="false" onAction="#loadWebpage" prefHeight="30.0" prefWidth="90.0" text="Go" GridPane.columnIndex="3" />
       <Button fx:id="refresh" mnemonicParsing="false" onAction="#refreshWebpage" prefHeight="30.0" prefWidth="193.0" text="Refresh" GridPane.columnIndex="4" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#back" prefHeight="54.0" prefWidth="106.0" text="Back" GridPane.columnIndex="5" />
+      <Button fx:id="forward" mnemonicParsing="false" onAction="#forward" prefHeight="45.0" prefWidth="106.0" text="Forward" GridPane.columnIndex="6" />
    </children>
 </GridPane>

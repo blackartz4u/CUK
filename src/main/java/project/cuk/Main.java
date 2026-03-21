@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebHistory;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
@@ -34,12 +35,16 @@ public class Main extends Application{
     @FXML
     private WebEngine webEngine;
     @FXML
+    private WebHistory webHistory;
+
+    @FXML
     private Button button;
     @FXML
     public void initialize() {
 
         webEngine = webView.getEngine();
         webEngine.load("https://www.google.com");
+        webHistory= webEngine.getHistory();
     }
     @FXML
     private void loadWebpage() {
@@ -48,10 +53,24 @@ public class Main extends Application{
             url = "https://" + url;
         }
         webEngine.load(url + "/index.html");
+
     }
     @FXML
     private void refreshWebpage(){
         webEngine.reload();
+    }
+    @FXML
+    private void back(){
+
+        if(webHistory.getCurrentIndex() > 0){
+            webHistory.go(-1);
+        }
+    }
+    @FXML
+    private void forward(){
+        if(webHistory.getCurrentIndex() < webHistory.getEntries().size() - 1){
+            webHistory.go(1);
+        }
     }
     static void main(String[] args) {
         launch();
