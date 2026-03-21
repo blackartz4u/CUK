@@ -21,7 +21,7 @@ public class Main extends Application{
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
-        Scene scene = new Scene(root, 720, 480);
+        Scene scene = new Scene(root, 1080, 720);
         stage.setTitle("MiniWebBrowser");
 
         stage.setScene(scene);
