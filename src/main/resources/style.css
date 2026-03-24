@@ -7,33 +7,40 @@
     -fx-padding: 8px 16px;
     -fx-font-size: 14px;
     -fx-text-fill: #333333;
+    transition: -fx-border-color 0.5s ease-in-out;
 }
 
 /* When the user clicks inside the address bar */
 .text-field:focused {
-    -fx-border-color: #4a90e2;
+    -fx-border-color: #cb8cff;
     -fx-background-color: #ffffff;
 }
 
 /* The 'Go' Button */
 .button {
-    -fx-background-color: #4a90e2; /* Modern blue */
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 20px; /* Matches the search bar */
+    -fx-background-color: white;
+
+
+    -fx-background-radius: 25px; /* Matches the search bar */
     -fx-padding: 8px, 0px;
-    -fx-cursor: hand;
+
+    transition: -fx-background-color 0.25s ease-in-out;
 }
 
 /* Button hover effect */
 .button:hover {
-    -fx-background-color: #357abd;
+    -fx-background-color: #E0E0E0;
+    transition: -fx-background-color 0.2s ease-in-out;
 }
 
 /* Button click effect */
 .button:pressed {
-    -fx-background-color: #285a8f;
+    -fx-scale-x: 0.88;
+    -fx-scale-y: 0.88;
+    -fx-background-color: #cb8cff;
+
 }
+
 
 /* The WebView */
 .web-view {
@@ -43,7 +50,7 @@
 }
 /* Progress bar track (background) */
 .progress-bar {
-    -fx-accent: #2196f3; /* main blue color */
+    -fx-accent: #8c00ff; /* main blue color */
 }
 
 /* Optional: background track styling */
@@ -54,7 +61,7 @@
 
 /* The moving blue part */
 .progress-bar .bar {
-    -fx-background-color: linear-gradient(to right, #42a5f5, #1e88e5);
+    -fx-background-color: linear-gradient(to right, #3b1e70, #cb8cff);
     -fx-background-radius: 10;
     -fx-padding: 4px;
 }
