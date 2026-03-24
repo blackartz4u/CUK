@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebHistory;
 import javafx.scene.web.WebView;
@@ -36,6 +37,9 @@ public class Main extends Application{
     private WebEngine webEngine;
     @FXML
     private WebHistory webHistory;
+    @FXML
+    private ProgressBar progressBar;
+
 
     @FXML
     private Button button;
@@ -45,6 +49,18 @@ public class Main extends Application{
         webEngine = webView.getEngine();
         webEngine.locationProperty().addListener((observable, oldUrl, newUrl) -> {
             addressBar.setText(newUrl);
+        });
+        progressBar.progressProperty().bind(webEngine.getLoadWorker().progressProperty());
+        webEngine.getLoadWorker().stateProperty().addListener((obs, oldState, newState) -> {
+            switch (newState) {
+                case RUNNING:
+                    progressBar.setVisible(true);
+                    break;
+                case SUCCEEDED:
+                case FAILED:
+                    progressBar.setVisible(false);
+                    break;
+            }
         });
         webEngine.load("https://www.google.com");
         webHistory= webEngine.getHistory();

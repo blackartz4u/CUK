@@ -41,3 +41,20 @@
     -fx-border-color: #e0e0e0;
     -fx-border-width: 1px 0 0 0;
 }
+/* Progress bar track (background) */
+.progress-bar {
+    -fx-accent: #2196f3; /* main blue color */
+}
+
+/* Optional: background track styling */
+.progress-bar .track {
+    -fx-background-color: #e0e0e0; /* light grey background */
+    -fx-background-radius: 10;
+}
+
+/* The moving blue part */
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #42a5f5, #1e88e5);
+    -fx-background-radius: 10;
+    -fx-padding: 4px;
+}
