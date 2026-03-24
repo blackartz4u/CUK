@@ -71,7 +71,7 @@ public class Main extends Application{
         if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "https://" + url;
         }
-        webEngine.load(url + "/index.html");
+        webEngine.load(url);
 
     }
     @FXML
