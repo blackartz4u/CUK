@@ -1,3 +1,5 @@
+import org.apache.tools.ant.taskdefs.optional.jlink.jlink
+
 group = "project.cuk"
 version = "1.0-SNAPSHOT"
 
@@ -16,8 +18,12 @@ plugins {
     java
     application
     // Use the official JavaFX plugin
+    id("application")
     id("org.openjfx.javafxplugin") version "0.1.0"
+
+
 }
+
 
 javafx {
     // Set this to your desired JavaFX version (e.g., 17, 21, or 24)
@@ -34,4 +40,13 @@ tasks.test {
 }
 tasks.withType<JavaExec> {
     jvmArgs = listOf("--enable-native-access=javafx.web")
+}
+tasks.register<Jar>("fatJar") {
+    archiveClassifier.set("all")
+    manifest {
+        attributes["Main-Class"] = "project.cuk.Launcher" // Update this line!
+    }
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    with(tasks.jar.get() as CopySpec)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
